@@ -28,6 +28,9 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+
+    <link rel="stylesheet" href="<?php echo get_bloginfo("template_url");?>/css/skeleton.css" media="all">
+
 </head>
 
 <body <?php body_class(); ?>>

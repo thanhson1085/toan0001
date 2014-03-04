@@ -16,8 +16,9 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
+                <div style="width: 100%; text-align: center;"><a href="<?php echo get_bloginfo("url");?>/contact-us"><span style="font-size: 18px; font-weight: bold; padding: 10px 20px; background-color: #B40404; border-radius: 8px; color: white;">Book Now!</span></a></div>
 				<?php twentythirteen_post_nav(); ?>
-				<?php comments_template(); ?>
+				<?php //comments_template(); ?>
 
 			<?php endwhile; ?>
 

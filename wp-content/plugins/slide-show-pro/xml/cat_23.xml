@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<slideshow >
+	<baseDef showPlay="0" autoSlideTimer="5"  autoScale="1" autoAlign="0" gradientColor1="0xbfbfbf"  gradientColor2="0xe7e7e7" pictureBoxColor= "0x666666" PictureThumbTitleColor="0xffffff" TextColor="0xffffff" TitleTextColor="0x00cc33" transitionTime="1" TextSize="10" ThumbTextSize="11" />
+
+	
+					<pic url="" target="_self" 	thumb="http://sonnguyen.com/toan0001/wp-content/uploads/slideshowpro/2_uploadfolder/thumb/myanmar211-resized.jpg" pic="http://sonnguyen.com/toan0001/wp-content/uploads/slideshowpro/2_uploadfolder/big/myanmar211.jpg"><Title><![CDATA[]]></Title> <desc><![CDATA[]]></desc></pic>
+</slideshow>
