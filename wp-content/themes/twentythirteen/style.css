@@ -92,7 +92,7 @@ audio:not([controls]) {
 }
 
 html {
-	font-size: 100%;
+	font-size: 15px;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -107,7 +107,7 @@ textarea {
 }
 
 body {
-	color: #141412;
+	color: #101010;
 	line-height: 1.5;
 	margin: 0;
 }
@@ -806,7 +806,6 @@ img.wp-smiley,
 
 .site-header .home-link {
     color: #b9132b;
-    text-shadow: 0 2px 5px black;
 	display: block;
 	margin: 0 auto;
 	max-width: 1080px;
@@ -820,16 +819,17 @@ img.wp-smiley,
 }
 
 .site-title {
-	font-size: 60px;
+	font-size: 30px;
 	font-weight: bold;
 	line-height: 1;
 	margin: 0;
-	padding: 0px 0 10px;
+	padding: 15px 0 5px;
 }
 
 .site-description {
-	font: 300 italic 24px "Source Sans Pro", Helvetica, sans-serif;
+	font: 300 italic 20px "Source Sans Pro", Helvetica, sans-serif;
 	margin: 0;
+    margin-bottom: 15px;
 }
 
 
@@ -875,12 +875,10 @@ div.nav-menu > ul {
 .nav-menu .sub-menu,
 .nav-menu .children {
 	background-color: #220e10;
-	border: 2px solid #f7f5e7;
 	border-top: 0;
 	display: none;
 	padding: 0;
 	position: absolute;
-	left: -2px;
 	z-index: 99999;
 }
 
@@ -927,6 +925,9 @@ ul.nav-menu li:hover > ul,
 	margin: 0 auto;
 	max-width: 1600px;
 	width: 100%;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
 }
 
 .site-header .search-form {
@@ -983,16 +984,16 @@ ul.nav-menu li:hover > ul,
 .sidebar .entry-content,
 .sidebar .entry-summary,
 .sidebar .entry-meta {
-	max-width: 1040px;
-	padding: 0 376px 0 60px;
+	max-width: 860px;
+	padding: 0 320px 0 0px;
 }
 
 .category.sidebar .entry-header,
 .category.sidebar .entry-content,
 .category.sidebar .entry-summary,
 .category.sidebar .entry-meta {
-	max-width: 1040px;
-	padding: 0 310px 0 310px;
+	max-width: 860;
+	padding: 0 260px 0 260px;
 }
 
 
@@ -2530,7 +2531,7 @@ footer.entry-meta {
 }
 
 .site-footer .sidebar-container {
-	background-color: #b9132b;
+	background-color: #1c1c1c;
 	padding: 20px 0;
 }
 
@@ -2543,7 +2544,6 @@ footer.entry-meta {
 .sidebar .site-footer .widget-area {
 	max-width: 724px;
 	position: relative;
-	left: -158px;
 }
 
 .site-footer .widget {
@@ -2699,6 +2699,10 @@ footer.entry-meta {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+    #navbar{
+        border-radius: 0 !important;
+    }
 
 	.sidebar .site-info,
 	.search.sidebar .page-content,
@@ -3175,7 +3179,13 @@ footer.entry-meta {
 }
 
 .home-block{
-    border: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin-bottom: 20px;
 }
 .home-block img{
     max-width: 100%;
@@ -3184,19 +3194,35 @@ footer.entry-meta {
     text-align: center;
     margin-top:0;
     margin-bottom:0;
-    line-height: 40px;
+    line-height: 35px;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     background-color: #b9132b;
+    border-radius: 10px 10px 0 0 ;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
 }
 .home-block ul{
     list-style-type: none;
     padding: 0;
-    padding-left: 20px;
-    padding-left 10px;
+    padding-left: 10px;
+    margin-top: 7px;
 }
+
 .home-block ul li{
-    line-height: 30px;
+    line-height: 25px;
+}
+.home-block ul li:before {
+    width: 10px;
+    display: inline-block;
+    content: "• ";
+    color: #1c1c1c; /* or whatever color you prefer */
+}
+.home-block ul li a{
+    color: #1c1c1c;
+}
+.block-center{
+    border: none;
 }
 .container .five.alpha.columns{
     margin-bottom: 20px;
@@ -3212,5 +3238,32 @@ footer.entry-meta {
     float: right;
     position: absolute;
     width: 240px;
-    padding-left: 10px;
+    padding-left: 0;
+}
+#contact{
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+#contact li a{
+    color: black;
+    font-weight: bold;
+}
+#page{
+    max-width: 860px;
+}
+.bullets{
+    margin: 3px auto !important;
+    display: none;
+}
+.slideshow-wrapper{
+    margin-top: -10px;
+}
+.slideshow-wrapper img{
+    border-radius: 0 0 10px 10px
+}
+.block-intro{
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
 }

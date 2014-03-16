@@ -39,6 +39,12 @@
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                <div id="contact">
+                    <ul>
+                    <li class="email"><a>thanhson1085@gmail.com</a></li>
+                    <li class="phone"><a>+84977373809</a></li>
+                    </ul>
+                </div>
 			</a>
 
 			<div id="navbar" class="navbar">
