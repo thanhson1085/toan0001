@@ -15,8 +15,8 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'twentythirteen' ), single_cat_title( '', false ) ); ?></h1>
+			<header class="archive-header" style="padding-left: 15px;">
+				<h1 class="archive-title"><?php printf( __( '%s', 'twentythirteen' ), single_cat_title( '', false ) ); ?></h1>
 
 				<?php if ( category_description() ) : // Show an optional category description ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
@@ -24,24 +24,50 @@ get_header(); ?>
 			</header><!-- .archive-header -->
             <div style="max-width: 1024px; margin: 0 auto">
             <div class="widget-area-right">
-<aside id="recent-posts-3" class="widget widget_recent_entries">        <h3 class="widget-title">Promotion Tours</h3>     <ul>
-                    <li>
-                <a href="http://sonnguyen.com/toan0001/mergui-archipelago-adventure-holiday-5-days4-nights/">MERGUI ARCHIPELAGO ADVENTURE HOLIDAY 5 DAYS/4 NIGHTS</a>
-                        </li>
-                    <li>
-                <a href="http://sonnguyen.com/toan0001/myanmar-discovery/">Myanmar Discovery</a>
-                        </li>
-                    <li>
-                <a href="http://sonnguyen.com/toan0001/laos-discovery/">Laos Discovery</a>
-                        </li>
-                    <li>
-                <a href="http://sonnguyen.com/toan0001/cambodia-discovery/">Cambodia Discovery</a>
-                        </li>
-                    <li>
-                <a href="http://sonnguyen.com/toan0001/hello-world/">Hanoi – Halong – Danang – Hoian – Hue – Saigon – Cu Chi Tunnels – 8 Days</a>
-                        </li>
-                </ul>
-        </aside>
+            <aside id="recent-posts-3" class="widget widget_recent_entries">        
+            <h3 class="widget-title">Promotion Tours</h3>     
+            <ul>
+                <?php
+                $args=array(
+                    'meta_key'=>'promotion_tours',
+                    'meta_value'=> '1',
+                    'post_type' => 'post',
+                    'post_status' => 'publish'
+                );
+                $my_query = null;
+                $my_query = new WP_Query($args);
+                if( $my_query->have_posts() ) {
+                while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                <?php
+                endwhile;
+                }
+                wp_reset_query();  // Restore global post data stomped by the_post().
+                ?>
+            </ul>
+            </aside>
+            <aside id="recent-posts-3" class="widget widget_recent_entries">        
+            <h3 class="widget-title">Popular Tours</h3>     
+            <ul>
+                <?php
+                $args=array(
+                    'meta_key'=>'popular_tours',
+                    'meta_value'=> '1',
+                    'post_type' => 'post',
+                    'post_status' => 'publish'
+                );
+                $my_query = null;
+                $my_query = new WP_Query($args);
+                if( $my_query->have_posts() ) {
+                while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                <?php
+                endwhile;
+                }
+                wp_reset_query();  // Restore global post data stomped by the_post().
+                ?>
+            </ul>
+            </aside>
             </div>
 
 			<?php /* The loop */ ?>

@@ -11,15 +11,15 @@
 ?>
 
 		</div><!-- #main -->
+	</div><!-- #page -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php get_sidebar( 'main' ); ?>
 
 			<div class="site-info">
 				<?php do_action( 'twentythirteen_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentythirteen' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentythirteen' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentythirteen' ), 'AndyTourist' ); ?></a>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentythirteen' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentythirteen' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentythirteen' ), 'viettravelcitizen.com' ); ?></a>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
-	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
 </body>

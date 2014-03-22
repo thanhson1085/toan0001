@@ -2981,6 +2981,9 @@ footer.entry-meta {
 		padding-left: 0;
 		width: auto;
 	}
+    #contact{
+        position: initial !important;
+    }
 }
 
 /* Mobile devices */
@@ -3198,9 +3201,6 @@ footer.entry-meta {
     color: white;
     font-size: 15px;
     background-color: #b9132b;
-    border-radius: 10px 10px 0 0 ;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius: 10px 10px 0 0;
 }
 .home-block ul{
     list-style-type: none;
