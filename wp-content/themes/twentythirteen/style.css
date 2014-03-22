@@ -2666,12 +2666,14 @@ footer.entry-meta {
 		position: static;
 	}
 
+/*
 	.site-main .widget-area {
 		margin-right: 60px;
 	}
+*/
 }
 
-@media (max-width: 999px) {
+@media (max-width: 899px) {
 	.category.sidebar .entry-header,
 	.category.sidebar .entry-content,
 	.category.sidebar .entry-summary,
