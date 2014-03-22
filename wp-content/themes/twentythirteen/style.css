@@ -110,6 +110,12 @@ body {
 	color: #101010;
 	line-height: 1.5;
 	margin: 0;
+    background: rgba(247, 245, 231, 0.7);
+}
+#container{
+    width: 900px;
+    background: white;
+    margin: 0 auto;
 }
 
 a {
@@ -2791,6 +2797,10 @@ footer.entry-meta {
 	.entry-content .wp-caption.alignleft {
 		margin-left: 0;
 	}
+
+    #container{
+        width: auto;
+    }
 
 	.entry-content img.alignright,
 	.entry-content .wp-caption.alignright {

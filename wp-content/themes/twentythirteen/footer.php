@@ -12,6 +12,7 @@
 
 		</div><!-- #main -->
 	</div><!-- #page -->
+	</div><!-- #container -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php get_sidebar( 'main' ); ?>
 
