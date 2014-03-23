@@ -13,7 +13,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+        <?php
+        $cat_tree = get_category_parents($cat, FALSE, ':', TRUE);
+        $top_cat = split(':',$cat_tree);
+        $parent = $top_cat[0];
+        $top_parent_cat = get_category_by_slug($parent);
 
+        ?>
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header" style="padding-left: 15px;">
 				<h1 class="archive-title"><?php printf( __( '%s', 'twentythirteen' ), single_cat_title( '', false ) ); ?></h1>
@@ -25,46 +31,15 @@ get_header(); ?>
             <div style="max-width: 1024px; margin: 0 auto">
             <div class="widget-area-right">
             <aside id="recent-posts-3" class="widget widget_recent_entries">        
-            <h3 class="widget-title">Promotion Tours</h3>     
             <ul>
                 <?php
-                $args=array(
-                    'meta_key'=>'promotion_tours',
-                    'meta_value'=> '1',
-                    'post_type' => 'post',
-                    'post_status' => 'publish'
-                );
-                $my_query = null;
-                $my_query = new WP_Query($args);
-                if( $my_query->have_posts() ) {
-                while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
-                <?php
-                endwhile;
+                $taxonomy_name = 'category';
+                $termchildren = get_term_children( $top_parent_cat->term_id, $taxonomy_name );
+
+                foreach ( $termchildren as $child ) {
+                    $term = get_term_by( 'id', $child, $taxonomy_name );
+                    echo '<li><a href="' . get_term_link( $child, $taxonomy_name ) . '">' . $term->name . '</a></li>';
                 }
-                wp_reset_query();  // Restore global post data stomped by the_post().
-                ?>
-            </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">        
-            <h3 class="widget-title">Popular Tours</h3>     
-            <ul>
-                <?php
-                $args=array(
-                    'meta_key'=>'popular_tours',
-                    'meta_value'=> '1',
-                    'post_type' => 'post',
-                    'post_status' => 'publish'
-                );
-                $my_query = null;
-                $my_query = new WP_Query($args);
-                if( $my_query->have_posts() ) {
-                while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
-                <?php
-                endwhile;
-                }
-                wp_reset_query();  // Restore global post data stomped by the_post().
                 ?>
             </ul>
             </aside>

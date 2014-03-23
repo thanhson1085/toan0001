@@ -7,21 +7,53 @@ get_header();
 <div class="container">
     <div class="fifteen alpha columns">
     <?php echo do_shortcode('[portfolio_slideshow id=37]');?>
+    <?php 
+        $category_ids = get_all_category_ids();
+        if (($key = array_search('11', $category_ids)) !== false) {
+            unset($category_ids[$key]);
+        }
+    ?>
+
+    <aside id="search-home" class="widget widget_search">
+        <form role="search" method="get" class="search-form" action="<?php echo home_url();?>">
+            <label>
+                <span class="screen-reader-text">Search for:</span>
+                <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+            </label>
+            <label><input style="vertical-align: middle;" type="checkbox" class="search-field" placeholder="Search …" value="<?php echo join($category_ids, ',');?>" name="cat">Tour</label>
+            <label><input style="vertical-align: middle;" type="checkbox" class="search-field" placeholder="Search …" value="11" name="cat">Hotel</label>
+            <input type="submit" value="Search" style="background-color: #101010;">
+        </form>
+    </aside>
     <div class="four alpha columns">
-        <div class="home-block">
-            <h2>Viet Nam Tours</h2>
-            <?php 
-                $idObj = get_category_by_slug('viet-nam-tours'); 
-                $value = get_field('cat_image', 'category_2');
+        <aside class="widget widget_categories">
+           <h3 class="widget-title">Recommended Tours</h3>
+            <ul>
+            <?php
+            $args=array(
+                'meta_key'=>'recommended_tours',
+                'meta_value'=> '1',
+                'post_type' => 'post',
+                'post_status' => 'publish'
+            );
+            $my_query = null;
+            $my_query = new WP_Query($args);
+            if( $my_query->have_posts() ) {
+            while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                            <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+            <?php
+            endwhile;
+            }
+            wp_reset_query();  // Restore global post data stomped by the_post().
             ?>
-            <img src="<?php echo $value['url'];?>">
-            <div class="block-intro">
-              <?php echo $idObj->description;?>
-            </div>
+            </ul>
+        </aside>
+        <aside class="widget widget_categories">
+           <h3 class="widget-title">Promotion News</h3>
             <ul>
                 <?php
                 $args=array(
-                    'meta_key'=>'vietnam_travel_widget',
+                    'meta_key'=>'promotion_tours',
                     'meta_value'=> '1',
                     'post_type' => 'post',
                     'post_status' => 'publish'
@@ -37,66 +69,13 @@ get_header();
                 wp_reset_query();  // Restore global post data stomped by the_post().
                 ?>
             </ul>
-        </div>
-        <div class="home-block">
-            <h2 style="background-color: #379e15">Myanmar Tours</h2>
-            <?php 
-                $idObj = get_category_by_slug('myanmar-tours'); 
-                $value = get_field('cat_image', 'category_7');
-            ?>
-            <img src="<?php echo $value['url'];?>">
-            <div class="block-intro">
-              <?php echo $idObj->description;?>
-            </div>
-            <ul>
-                <?php
-                $args=array(
-                    'meta_key'=>'myanmar_travel_widget',
-                    'meta_value'=> '1',
-                    'post_type' => 'post',
-                    'post_status' => 'publish'
-                );
-                $my_query = null;
-                $my_query = new WP_Query($args);
-                if( $my_query->have_posts() ) {
-                while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
-                <?php
-                endwhile;
-                }
-                wp_reset_query();  // Restore global post data stomped by the_post().
-                ?>
-            </ul>
-        </div>
+        </aside>
     </div>
     <div class="seven alpha columns">
         <div class="home-block block-center">
                 <?php while ( have_posts() ) : the_post(); ?>
-                <h1 class="entry_title" style="margin: 10px 0;"><a>WELLCOME</a></h1>
-
                 <?php the_content();?>
                 <?php endwhile; ?>
-                <h1 class="entry_title" style="margin: 10px 0;"><a>Promotion</a></h1>
-                <ul>
-                    <?php
-                    $args=array(
-                        'meta_key'=>'promotion_tours',
-                        'meta_value'=> '1',
-                        'post_type' => 'post',
-                        'post_status' => 'publish'
-                    );
-                    $my_query = null;
-                    $my_query = new WP_Query($args);
-                    if( $my_query->have_posts() ) {
-                    while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
-                    <?php
-                    endwhile;
-                    }
-                    wp_reset_query();  // Restore global post data stomped by the_post().
-                    ?>
-                </ul>
-                <h1 class="entry_title" style="margin: 10px 0;"><a>Popular tours</a></h1>
                 <ul>
                     <?php
                     $args=array(
@@ -119,20 +98,24 @@ get_header();
         </div>
     </div>
     <div class="four alpha columns" style="margin-right: 0px;">
-        <div class="home-block">
-            <h2 style="background-color: #e66d1c">Laos Tours</h2>
-            <?php 
-                $idObj = get_category_by_slug('laos-tours'); 
-                $value = get_field('cat_image', 'category_3');
-            ?>
-            <img src="<?php echo $value['url'];?>">
-            <div class="block-intro">
-              <?php echo $idObj->description;?>
-            </div>
+        <aside class="widget" style="background-color:#b9132b; cursor: pointer" onclick="javascript:window.location.href='<?php echo home_url('/customize-tour/');?>'">
+            <div><a style="color: white; font-weight: bold;" href="<?php echo home_url('/customize-tour/');?>">Customize your trip</a></div>
+        </aside>
+        <aside class="widget widget_categories">
+           <h3 class="widget-title">Contacts</h3>      
+           <ul>
+           <li><a href="ymsgr:sendim?thanhson1085"><img border="0" src="http://opi.yahoo.com/online?u=thanhson1085&amp;m=g&amp;t=1" alt="Hỗ trợ trực tuyến"></a></li>
+           <li><a href="skype:thanhson1085?chat" onclick="return skypeCheck();"><img src="http://mystatus.skype.com/smallclassic/thanhson1085" style="border: none;" width="114" height="20" alt="My status"></a></li>
+            <li>Call Andy (Mr.)</li>
+            <li style="font-weight: bold; color: #B40404">+84912965545</li>
+            </ul>
+        </aside>
+        <aside class="widget widget_categories">
+           <h3 class="widget-title">Feature Hotels</h3>
             <ul>
                 <?php
                 $args=array(
-                    'meta_key'=>'laos_travel_widget',
+                    'meta_key'=>'feature_hotels',
                     'meta_value'=> '1',
                     'post_type' => 'post',
                     'post_status' => 'publish'
@@ -148,37 +131,7 @@ get_header();
                 wp_reset_query();  // Restore global post data stomped by the_post().
                 ?>
             </ul>
-        </div>
-        <div class="home-block">
-            <h2>Cambodia Tours</h2>
-            <?php
-                $idObj = get_category_by_slug('cambodia-tours');
-                $value = get_field('cat_image', 'category_4');
-            ?>
-            <img src="<?php echo $value['url'];?>">
-            <div class="block-intro">
-              <?php echo $idObj->description;?>
-            </div>
-            <ul>
-                <?php
-                $args=array(
-                    'meta_key'=>'cambodia_travel_widget',
-                    'meta_value'=> '1',
-                    'post_type' => 'post',
-                    'post_status' => 'publish'
-                );
-                $my_query = null;
-                $my_query = new WP_Query($args);
-                if( $my_query->have_posts() ) {
-                while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
-                <?php
-                endwhile;
-                }
-                wp_reset_query();  // Restore global post data stomped by the_post().
-                ?>
-            </ul>
-        </div>
+        </aside>
     </div>
     <div class="clear"></div>
     </div>

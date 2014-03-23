@@ -116,6 +116,7 @@ body {
     width: 900px;
     background: white;
     margin: 0 auto;
+    min-height: 980px;
 }
 
 a {
@@ -868,7 +869,7 @@ div.nav-menu > ul {
 	display: block;
 	font-size: 15px;
 	line-height: 1;
-	padding: 15px 20px;
+	padding: 15px 15px;
 	text-decoration: none;
 }
 
@@ -2522,7 +2523,7 @@ footer.entry-meta {
 
 .site-footer {
 	background-color: #e8e5ce;
-	color: #686758;
+	color: #101010;
 	font-size: 14px;
 	text-align: center;
 }
@@ -2538,7 +2539,7 @@ footer.entry-meta {
 
 .site-footer .sidebar-container {
 	background-color: #1c1c1c;
-	padding: 20px 0;
+	padding: 10px 0;
 }
 
 .site-footer .widget-area {
@@ -2799,9 +2800,21 @@ footer.entry-meta {
 	.entry-content .wp-caption.alignleft {
 		margin-left: 0;
 	}
+    #search-home{
+    margin-top: 0 !important;
+    width: auto !important;
+    text-align: auto !important;
+    }
+    footer ul{
+        width: auto !important;
+    }
+    footer .site-info div{
+        width: auto !important;
+    }
 
     #container{
         width: auto;
+        min-height: auto;
     }
 
 	.entry-content img.alignright,
@@ -3003,6 +3016,11 @@ footer.entry-meta {
 	.gallery {
 		margin-left: 0;
 	}
+
+    footer ul li{
+        display: list-item !important;
+        line-height: 25px !important;
+    }
 
 	.gallery .gallery-item,
 	.gallery-columns-2.gallery-size-thumbnail .gallery-item {
@@ -3278,4 +3296,35 @@ footer.entry-meta {
     width: 90%;
     margin: 0 auto;
     text-align: justify;
+}
+ul.nav-menu > li > ul li a {
+    padding: 10px; 15px; 
+}
+footer ul{
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 800px;
+}
+footer ul li{
+    display: inline-block;
+}
+footer ul li a{
+    color: white !important;
+    padding: 0 10px;
+}
+#search-home input[type="checkbox"]{
+    margin-left: 10px;
+}
+#search-home input[type="submit"]{
+    padding: 5px 10px;
+}
+#search-home{
+    margin-top: -72px;
+    z-index: 1000;
+    position: relative;
+    text-align: right;
+    width: 483px;
+    float: right;
+    padding: 10px 10px;
 }
