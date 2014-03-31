@@ -546,3 +546,18 @@ function twentythirteen_customize_preview_js() {
 	wp_enqueue_script( 'twentythirteen-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20130226', true );
 }
 add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
+add_action( 'init', 'create_posttype' );
+
+function create_posttype() {
+    register_post_type( 'snws_link',
+        array(
+            'labels' => array(
+                'name' => __( 'Home Links' ),
+                'singular_name' => __( 'Home Link' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'smws_links'),
+        )
+    );
+}

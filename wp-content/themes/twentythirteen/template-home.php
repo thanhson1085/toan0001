@@ -76,6 +76,29 @@ get_header();
                 <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_content();?>
                 <?php endwhile; ?>
+                <div class="snws-link">
+                <?php
+                $args=array(
+                    'post_type' => 'snws_link',
+                    'posts_per_page' => 4,
+                    'post_status' => 'publish'
+                );
+                $my_query = null;
+                $my_query = new WP_Query($args);
+                if( $my_query->have_posts() ) {
+                while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                    <a href="<?php echo $post->post_content; ?>">
+                    <?php 
+                        $attch_id = get_post_meta($post->ID, 'link_image', true);
+                        $img_att = wp_get_attachment_image_src($attch_id, array(170, 170), true);
+                    ?>
+                    <img src="<?php echo $img_att[0];?>"></a>
+                <?php
+                endwhile;
+                }
+                wp_reset_query();  // Restore global post data stomped by the_post().
+                ?>
+                </div>
                 <ul>
                     <?php
                     $args=array(

@@ -3328,3 +3328,10 @@ footer ul li a{
     float: right;
     padding: 10px 10px;
 }
+.snws-link{
+    text-align: center;
+}
+.snws-link a img{
+    margin: 5px;
+    width: 170px;
+}
