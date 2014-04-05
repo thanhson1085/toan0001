@@ -14,7 +14,7 @@ get_header();
         }
     ?>
 
-    <aside id="search-home" class="widget widget_search">
+    <aside id="search-home" class="widget widget_search" style="background: rgba(247, 245, 231, 0.7)">
         <form role="search" method="get" class="search-form" action="<?php echo home_url();?>">
             <label>
                 <span class="screen-reader-text">Search for:</span>
@@ -40,7 +40,11 @@ get_header();
             $my_query = new WP_Query($args);
             if( $my_query->have_posts() ) {
             while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                            <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                <li>        
+                    <div style="float: left; margin-right: 8px">
+                        <?php the_post_thumbnail(array(30,30)); ?>
+                    </div>
+                    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
             <?php
             endwhile;
             }
@@ -62,7 +66,11 @@ get_header();
                 $my_query = new WP_Query($args);
                 if( $my_query->have_posts() ) {
                 while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                        <li>
+                        <div style="float: left; margin-right: 8px">
+                            <?php the_post_thumbnail(array(30,30)); ?>
+                        </div>
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
                 <?php
                 endwhile;
                 }
@@ -111,7 +119,8 @@ get_header();
                     $my_query = new WP_Query($args);
                     if( $my_query->have_posts() ) {
                     while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                        <li>
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
                     <?php
                     endwhile;
                     }
@@ -125,12 +134,12 @@ get_header();
             <div><a style="color: white; font-weight: bold;" href="<?php echo home_url('/customize-tour/');?>">Customize your trip</a></div>
         </aside>
         <aside class="widget widget_categories">
-           <h3 class="widget-title">Contacts</h3>      
+           <h3 class="widget-title">Support Online</h3>      
            <ul>
-           <li><a href="ymsgr:sendim?thanhson1085"><img border="0" src="http://opi.yahoo.com/online?u=thanhson1085&amp;m=g&amp;t=1" alt="Hỗ trợ trực tuyến"></a></li>
-           <li><a href="skype:thanhson1085?chat" onclick="return skypeCheck();"><img src="http://mystatus.skype.com/smallclassic/thanhson1085" style="border: none;" width="114" height="20" alt="My status"></a></li>
+           <li><a href="ymsgr:sendim?travelwithme123"><img border="0" src="http://opi.yahoo.com/online?u=travelwithme123&amp;m=g&amp;t=1" alt="Support Online"></a></li>
+           <li><a href="skype:namtalent123?chat" onclick="return skypeCheck();"><img src="http://mystatus.skype.com/smallclassic/namtalent123" style="border: none;" width="114" height="20" alt="My status"></a></li>
             <li>Call Andy (Mr.)</li>
-            <li style="font-weight: bold; color: #B40404">+84912965545</li>
+            <li style="font-weight: bold">+84912965545</li>
             </ul>
         </aside>
         <aside class="widget widget_categories">
@@ -147,7 +156,11 @@ get_header();
                 $my_query = new WP_Query($args);
                 if( $my_query->have_posts() ) {
                 while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
+                        <li>
+                        <div style="float: left; margin-right: 8px">
+                            <?php the_post_thumbnail(array(30,30)); ?>
+                        </div>
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></li>
                 <?php
                 endwhile;
                 }

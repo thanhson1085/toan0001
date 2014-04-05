@@ -92,7 +92,7 @@ audio:not([controls]) {
 }
 
 html {
-	font-size: 15px;
+	font-size: 13px;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -103,14 +103,14 @@ button,
 input,
 select,
 textarea {
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 body {
 	color: #101010;
 	line-height: 1.5;
 	margin: 0;
-    background: rgba(247, 245, 231, 0.7);
+    background: #1c1c1c;
 }
 #container{
     width: 900px;
@@ -149,22 +149,22 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: Bitter, Georgia, serif;
+	font-family: Arial, sans-serif;
 	line-height: 1.3;
 }
 
 h1 {
-	font-size: 24px;
+	font-size: 20px;
 	margin: 33px 0;
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 15px;
 	margin: 25px 0;
 }
 
 h3 {
-	font-size: 22px;
+	font-size: 14px;
 	margin: 22px 0;
 }
 
@@ -174,12 +174,12 @@ h4 {
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 13px;
 	margin: 30px 0;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 13px;
 	margin: 36px 0;
 }
 
@@ -214,7 +214,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, serif;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
 	-webkit-hyphens: none;
 	-moz-hyphens:    none;
@@ -401,7 +401,7 @@ input[type="radio"] {
 input[type="search"] {
 	-webkit-appearance: textfield;
 	padding-right: 2px; /* Don't cut off the webkit search cancel button */
-	width: 270px;
+	width: 170px;
 }
 
 input[type="search"]::-webkit-search-decoration {
@@ -849,7 +849,7 @@ img.wp-smiley,
 	clear: both;
 	margin: 0 auto;
 	max-width: 1080px;
-	min-height: 45px;
+	min-height: 40px;
 	position: relative;
 }
 
@@ -867,7 +867,7 @@ div.nav-menu > ul {
 .nav-menu li a {
 	color: #fff;
 	display: block;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 1;
 	padding: 15px 15px;
 	text-decoration: none;
@@ -975,7 +975,7 @@ ul.nav-menu li:hover > ul,
  */
 
 .hentry {
-	padding: 40px 0;
+	padding: 20px 0;
 }
 
 .entry-header,
@@ -1016,7 +1016,16 @@ ul.nav-menu li:hover > ul,
 
 .entry-thumbnail img {
 	display: block;
-	margin: 0 auto 10px;
+}
+.entry-thumbnail{
+    padding-top: 10px;
+    float: left;
+    margin-right: 8px;
+}
+.entry-intro{
+    text-align: justify;
+    float: left;
+    width: 215px;
 }
 
 .entry-header {
@@ -1044,7 +1053,7 @@ ul.nav-menu li:hover > ul,
 
 .entry-meta {
 	clear: both;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .entry-meta a {
@@ -1921,7 +1930,7 @@ footer.entry-meta {
 .post-navigation {
 	background-color: #fff;
 	color: #ca3c08;
-	font-size: 20px;
+	font-size: 13px;
 	font-style: italic;
 	font-weight: 300;
 	padding: 20px 0;
@@ -2000,7 +2009,6 @@ footer.entry-meta {
 
 .archive-title,
 .archive-meta {
-	font: 300 italic 30px "Source Sans Pro", Helvetica, sans-serif;
 	margin: 0 auto;
 	max-width: 1040px;
 	padding: 30px 0;
@@ -2417,19 +2425,20 @@ footer.entry-meta {
  */
 
 .widget {
-	background-color: rgba(247, 245, 231, 0.7);
-	font-size: 14px;
+	background-color: #b9132b;
+    color: white;
+	font-size: 13px;
 	-webkit-hyphens: auto;
 	-moz-hyphens:    auto;
 	-ms-hyphens:     auto;
 	hyphens:         auto;
-	margin: 0 0 24px;
-	padding: 20px;
+	margin: 0 0 20px;
+	padding: 13px;
 	word-wrap: break-word;
 }
 
 .widget .widget-title {
-	font: 300 italic 20px "Source Sans Pro", Helvetica, sans-serif;
+	font-family: Arial, sans-serif;
 	margin: 0 0 10px;
 }
 
@@ -2454,7 +2463,7 @@ footer.entry-meta {
 }
 
 .widget a {
-	color: #bc360a;
+	color: white;
 }
 
 .widget a:hover {
@@ -3324,7 +3333,7 @@ footer ul li a{
     z-index: 1000;
     position: relative;
     text-align: right;
-    width: 483px;
+    width: 370px;
     float: right;
     padding: 10px 10px;
 }

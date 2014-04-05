@@ -12,11 +12,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div>
-		<?php endif; ?>
 
 		<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -38,8 +33,17 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
+		<?php if ( is_category() && has_post_thumbnail() && ! post_password_required() ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(array(100,100)); ?>
+		</div>
+        <div class="entry-intro">
+        <?php else:?>
+        <div>
+		<?php endif; ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+        </div>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

@@ -42,7 +42,7 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                 <div id="contact">
                     <ul>
-                    <li class="email"><a>vutoan79@gmail.com</a></li>
+                    <li class="email"><a>info@viettravelcitizen.com</a></li>
                     <li class="phone"><a>+84912965545</a></li>
                     </ul>
                 </div>

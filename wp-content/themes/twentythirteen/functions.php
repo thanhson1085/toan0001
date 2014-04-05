@@ -335,10 +335,12 @@ function twentythirteen_entry_meta() {
 		twentythirteen_entry_date();
 
 	// Translators: used between list items, there is a space after the comma.
+    /*
 	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
 	if ( $categories_list ) {
 		echo '<span class="categories-links">' . $categories_list . '</span>';
 	}
+    */
 
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
@@ -549,6 +551,17 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 add_action( 'init', 'create_posttype' );
 
 function create_posttype() {
+    register_post_type( 'snws_footerlink',
+        array(
+            'labels' => array(
+                'name' => __( 'Footer Links' ),
+                'singular_name' => __( 'Footer Link' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'snws_footerlinks'),
+        )
+    );
     register_post_type( 'snws_link',
         array(
             'labels' => array(
