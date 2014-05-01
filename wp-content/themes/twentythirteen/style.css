@@ -113,7 +113,7 @@ body {
     background: #1c1c1c;
 }
 #container{
-    width: 900px;
+    width: 1000px;
     background: white;
     margin: 0 auto;
     min-height: 980px;
@@ -991,7 +991,7 @@ ul.nav-menu li:hover > ul,
 .sidebar .entry-content,
 .sidebar .entry-summary,
 .sidebar .entry-meta {
-	max-width: 860px;
+	max-width: 960px;
 	padding: 0 320px 0 0px;
 }
 
@@ -999,7 +999,7 @@ ul.nav-menu li:hover > ul,
 .category.sidebar .entry-content,
 .category.sidebar .entry-summary,
 .category.sidebar .entry-meta {
-	max-width: 860;
+	max-width: 960;
 	padding: 0 260px 0 260px;
 }
 
@@ -1025,7 +1025,7 @@ ul.nav-menu li:hover > ul,
 .entry-intro{
     text-align: justify;
     float: left;
-    width: 215px;
+    max-width: 315px;
 }
 
 .entry-header {
@@ -3289,14 +3289,20 @@ footer.entry-meta {
     font-weight: bold;
 }
 #page{
-    max-width: 860px;
+    max-width: 960px;
 }
 .bullets{
     margin: 3px auto !important;
     display: none;
 }
 .slideshow-wrapper{
-    margin-top: -10px;
+    margin-top: 0;
+}
+.portfolio-slideshow{
+    margin-top: 0 !important;
+}
+.entry-content p{
+    margin-bottom: 0px;
 }
 .slideshow-wrapper img{
     border-radius: 0 0 10px 10px
@@ -3342,5 +3348,5 @@ footer ul li a{
 }
 .snws-link a img{
     margin: 5px;
-    width: 170px;
+    width: 235px;
 }
