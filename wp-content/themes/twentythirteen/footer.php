@@ -63,5 +63,6 @@ jQuery(document).ready(function(){
     jQuery('.cat-page-container').css('min-height', max_height + 'px');
 });
 </script>
+<script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
 </body>
 </html>
