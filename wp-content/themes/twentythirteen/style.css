@@ -112,6 +112,9 @@ body {
 	margin: 0;
     background: #1c1c1c;
 }
+#colophon{
+    margin-top: 0 !important;
+}
 #container{
     width: 1000px;
     background: white;
@@ -2702,6 +2705,9 @@ footer.entry-meta {
     .widget-area-right{
         display: none;
     }
+    .cat-page-container{
+        min-height: auto !important;
+    }
 	.sidebar .entry-header,
 	.sidebar .entry-content,
 	.sidebar .entry-summary,
@@ -2814,6 +2820,9 @@ footer.entry-meta {
     width: auto !important;
     text-align: auto !important;
     }
+    .cat-page-container{
+        min-height: auto !important;
+    }
     footer ul{
         width: auto !important;
     }
@@ -2867,6 +2876,10 @@ footer.entry-meta {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+
+    .cat-page-container{
+        min-height: auto !important;
+    }
 
 	#content .format-status .entry-content,
 	#content .format-status .entry-met {
@@ -3025,6 +3038,10 @@ footer.entry-meta {
 	.gallery {
 		margin-left: 0;
 	}
+
+    .cat-page-container{
+        min-height: auto !important;
+    }
 
     footer ul li{
         display: list-item !important;
