@@ -56,7 +56,11 @@
 	<?php wp_footer(); ?>
 <script type="text/javascript">
 jQuery(document).ready(function(){
-   jQuery('.cat-page-container').css('min-height', jQuery('.widget-area-right').height() + 'px');
+    var max_height = jQuery('.widget-area-right').height();
+    if (jQuery('.widget-area').height() > jQuery('.widget-area-right').height() + 10){
+        max_height = jQuery('.widget-area').height();
+    }
+    jQuery('.cat-page-container').css('min-height', max_height + 'px');
 });
 </script>
 </body>

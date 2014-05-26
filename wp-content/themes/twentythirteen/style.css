@@ -922,7 +922,6 @@ ul.nav-menu li:hover > ul,
 .nav-menu .current-menu-ancestor > a {
 	color: #ea9629;
     font-weight: bold;
-	font-style: italic;
 }
 
 .menu-toggle {
