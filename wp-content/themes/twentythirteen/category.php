@@ -28,7 +28,7 @@ get_header(); ?>
 				<div class="archive-meta"><?php echo category_description(); ?></div>
 				<?php endif; ?>
 			</header><!-- .archive-header -->
-            <div style="max-width: 1024px; margin: 0 auto">
+            <div class="cat-page-container" style="max-width: 1024px; margin: 0 auto">
             <div class="widget-area-right">
             <aside id="recent-posts-3" class="widget widget_recent_entries">        
             <ul>
